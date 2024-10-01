@@ -13,10 +13,11 @@ function handleSubmitForm(e) {
     if (input.value != '') {
         // Task array implementation
         const currentTask = {
-            id: allTasks.length - 1,
+            id: UUID(getRandomInt(10)),
             value: input.value,
             done: false 
         }
+        console.log(currentTask.id);
         allTasks.push(currentTask);
     
         // Refreshing tasks & resetting input
@@ -108,8 +109,16 @@ function checkTodo(taskHandle, checkButton, taskData) {
 function deleteTodo(task) {
     let item = task;
 
-    // Splices task from array and refreshes tasks with our function
-    allTasks.splice(item.id, 1);
+    // Looping all tasks and checking if id's match & splices the index from the array.
+
+    for (let currentIndex = 0; currentIndex < allTasks.length; currentIndex++) {
+        const currentTask = allTasks[currentIndex];
+        
+        if (currentTask.id == task.id) {
+            allTasks.splice(currentIndex, 1);
+        }
+    }
+
 
     refreshTasks();
 }
@@ -119,4 +128,22 @@ function handleClearAll(e) {
     document.querySelector('ul').innerHTML = '';
     allTasks = [];
     refreshTaskCount();
+}
+
+// Unique id creator to always get a unique id for each entry in the array (Thank you stack overflow)
+function UUID(length) {
+    const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+
+    let id = '';
+
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        id += characters[randomIndex];
+    }
+
+    return Date.now().toString(16) + id;
+}
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
 }
