@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
+
+html {
+    height: 100vh;
+    min-width: 600px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,73,121,1) 30%, rgba(8,91,138,1) 37%, rgba(8,90,137,1) 44%, rgba(8,90,137,1) 52%, rgba(7,98,145,1) 62%, rgba(0,212,255,1) 100%);
+    font-family: 'roboto';
+}
+
+.container {
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.mainHeader {
+    color: white;
+    letter-spacing: 1px;
+}
+
+.mainDiv {
+    padding: 20px;
+}
+
+form {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+}
+
+.inputClass {
+    height: 30px;
+    outline: 0;
+    border: none;
+    font-size: 1rem;   
+    color: balck;
+    flex-grow: 1;
+}
+
+.submitButton:hover {
+    cursor: pointer;
+}
+
+.listClass {
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px 25px;
+    height: 100%;
+
+}
+
+ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
+    padding: 15px 0;
+    font-size: 1rem;
+    color: black;
+}
+
+.clearTextClass { 
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.clearTextClass:hover {
+    color: red;
+}
+
+.todoItem {
+    flex-grow: 1;
+}
+
+i {
+    pointer-events: none;
+}
+
+.taskCompleted {
+    color: white;
+    letter-spacing: 1.5px;
+}
