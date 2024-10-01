@@ -17,7 +17,6 @@ function handleSubmitForm(e) {
             value: input.value,
             done: false 
         }
-        console.log(currentTask.id);
         allTasks.push(currentTask);
     
         // Refreshing tasks & resetting input
